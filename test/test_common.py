@@ -86,7 +86,7 @@ class TestCommon(unittest.TestCase):
                           info.validate_order, "foo_bar", "buy",
                           decimal.Decimal("1.0"), decimal.Decimal("1.0"))
         self.assertRaises(tidexapi.InvalidTradeTypeException,
-                          info.validate_order, "btc_usd", "foo",
+                          info.validate_order, "btc_wusd", "foo",
                           decimal.Decimal("1.0"), decimal.Decimal("1.0"))
 
     def test_parseJSONResponse(self):

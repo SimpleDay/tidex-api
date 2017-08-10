@@ -34,4 +34,7 @@ nosetests.xml
 .project
 .pydevproject
 
+# VS Code
+.vscode
+
 *~
