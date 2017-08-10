@@ -1,6 +1,6 @@
 import unittest
 import tempfile
-from btceapi.keyhandler import KeyData, AbstractKeyHandler, KeyHandler, InvalidNonceException
+from tidexapi.keyhandler import KeyData, AbstractKeyHandler, KeyHandler, InvalidNonceException
 
 
 class TestKeyData(unittest.TestCase):

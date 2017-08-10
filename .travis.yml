@@ -15,6 +15,6 @@ python:
 install:
     pip install nose coveralls coverage
 script:
-    nosetests --with-coverage --cover-package=btceapi
+    nosetests --with-coverage --cover-package=tidexapi
 after_success:
     coveralls

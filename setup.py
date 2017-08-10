@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 from setuptools import setup
 
-setup(name='btce-api',
+setup(name='tidex-api',
       version='0.9',
       author='CodeReclaimers, LLC',
       author_email='alan@codereclaimers.com',
-      url='https://github.com/CodeReclaimers/btce-api',
+      url='https://github.com/lromanov/tidex-api',
       license="MIT",
-      description='A library for the public and private APIs of the digital currency trading site BTC-e.com.',
-      packages=['btceapi'],
+      description='A library for the public and private APIs of the digital currency trading site tidex.com.',
+      packages=['tidexapi'],
       classifiers=[
           'Development Status :: 2 - Pre-Alpha',
           'Intended Audience :: Developers',

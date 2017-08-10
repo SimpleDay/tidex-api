@@ -1,35 +1,35 @@
 import unittest
 
-import btceapi
+import tidexapi
 
 
 class TestPublic(unittest.TestCase):
     def test_getTicker(self):
-        connection = btceapi.BTCEConnection()
-        info = btceapi.APIInfo(connection)
+        connection = tidexapi.Connection()
+        info = tidexapi.APIInfo(connection)
         for pair in info.pair_names:
-            btceapi.getTicker(pair, connection, info)
-            btceapi.getTicker(pair, connection)
-            btceapi.getTicker(pair, info=info)
-            btceapi.getTicker(pair)
+            tidexapi.getTicker(pair, connection, info)
+            tidexapi.getTicker(pair, connection)
+            tidexapi.getTicker(pair, info=info)
+            tidexapi.getTicker(pair)
 
     def test_getHistory(self):
-        connection = btceapi.BTCEConnection()
-        info = btceapi.APIInfo(connection)
+        connection = tidexapi.Connection()
+        info = tidexapi.APIInfo(connection)
         for pair in info.pair_names:
-            btceapi.getTradeHistory(pair, connection, info)
-            btceapi.getTradeHistory(pair, connection)
-            btceapi.getTradeHistory(pair, info=info)
-            btceapi.getTradeHistory(pair)
+            tidexapi.getTradeHistory(pair, connection, info)
+            tidexapi.getTradeHistory(pair, connection)
+            tidexapi.getTradeHistory(pair, info=info)
+            tidexapi.getTradeHistory(pair)
 
     def test_getDepth(self):
-        connection = btceapi.BTCEConnection()
-        info = btceapi.APIInfo(connection)
+        connection = tidexapi.Connection()
+        info = tidexapi.APIInfo(connection)
         for pair in info.pair_names:
-            btceapi.getDepth(pair, connection, info)
-            btceapi.getDepth(pair, connection)
-            btceapi.getDepth(pair, info=info)
-            btceapi.getDepth(pair)
+            tidexapi.getDepth(pair, connection, info)
+            tidexapi.getDepth(pair, connection)
+            tidexapi.getDepth(pair, info=info)
+            tidexapi.getDepth(pair)
 
 
 if __name__ == '__main__':

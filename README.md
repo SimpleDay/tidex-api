@@ -1,8 +1,14 @@
-btce-api
+tidex-api
 ========
 
 [![Build Status](https://travis-ci.org/CodeReclaimers/btce-api.svg)](https://travis-ci.org/CodeReclaimers/btce-api)
 [![Coverage Status](https://coveralls.io/repos/github/CodeReclaimers/btce-api/badge.svg)](https://coveralls.io/github/CodeReclaimers/btce-api)
+
+This library is build on top of CodeReclaimers' forsaken BTC-e API library in order to support [Tidex API](https://tidex.com/public-api) which is almost the same.
+
+The rest readme text is from original library.
+
+***
 
 NOTE: Due to the apparent closure of BTC-e, this repository is no longer being maintained.  If BTC-e returns, I may resume maintenance.
 

@@ -128,7 +128,7 @@ def getTicker(pair, connection=None, info=None):
         info.validate_pair(pair)
 
     if connection is None:
-        connection = common.BTCEConnection()
+        connection = common.Connection()
 
     response = connection.makeJSONRequest("/api/3/ticker/%s" % pair)
 
@@ -151,7 +151,7 @@ def getDepth(pair, connection=None, info=None):
         info.validate_pair(pair)
 
     if connection is None:
-        connection = common.BTCEConnection()
+        connection = common.Connection()
 
     response = connection.makeJSONRequest("/api/3/depth/%s" % pair)
     if type(response) is not dict:
@@ -185,7 +185,7 @@ def getTradeHistory(pair, connection=None, info=None, count=None):
         info.validate_pair(pair)
 
     if connection is None:
-        connection = common.BTCEConnection()
+        connection = common.Connection()
 
     response = connection.makeJSONRequest("/api/3/trades/%s" % pair)
     if type(response) is not dict:

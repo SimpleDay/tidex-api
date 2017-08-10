@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-import btceapi
+import tidexapi
 
-with btceapi.BTCEConnection() as connection:
-    info = btceapi.APIInfo(connection)
+with tidexapi.Connection() as connection:
+    info = tidexapi.APIInfo(connection)
 
     print("Server time: %s" % info.server_time)
 

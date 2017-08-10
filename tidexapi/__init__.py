@@ -1,6 +1,6 @@
 # Copyright (c) 2013-2017 CodeReclaimers, LLC
 
-from .common import formatCurrencyDigits, truncateAmountDigits, BTCEConnection, \
+from .common import formatCurrencyDigits, truncateAmountDigits, Connection, \
     InvalidTradePairException, InvalidTradeTypeException, \
     InvalidTradeAmountException, InvalidTradePriceException,  APIResponseError
 

@@ -2,14 +2,14 @@ from datetime import datetime
 import sys
 import unittest
 
-import btceapi
+import tidexapi
 
 
 class TestScraping(unittest.TestCase):
 
     def test_scrape_main_page(self):
-        with btceapi.BTCEConnection() as connection:
-            info = btceapi.APIInfo(connection)
+        with tidexapi.Connection() as connection:
+            info = tidexapi.APIInfo(connection)
             mainPage = info.scrapeMainPage()
 
             for message in mainPage.messages:
