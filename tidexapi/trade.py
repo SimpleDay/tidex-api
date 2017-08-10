@@ -55,8 +55,12 @@ TradeHistoryItem = namedtuple("TradeHistoryItem",
     ["transaction_id", "pair", "type", "amount", "rate", "order_id", "is_your_order", "timestamp"])
 
 
-OrderItem = namedtuple("OrderItem",
+ActiveOrderItem = namedtuple("ActiveOrderItem",
     ["order_id", "pair", "type", "amount", "rate", "timestamp_created", "status"])
+
+
+OrderItem = namedtuple("OrderItem",
+    ["order_id", "pair", "type", "start_amount", "amount", "rate", "timestamp_created", "status"])
 
 
 TradeResult = namedtuple("TradeResult",
@@ -216,7 +220,7 @@ class TradeAPI(object):
         orders = self._post(params)
         result = []
         for k, v in orders.items():
-            result.append(OrderItem(int(k), **v))
+            result.append(ActiveOrderItem(int(k), **v))
 
         return result
 
@@ -235,3 +239,16 @@ class TradeAPI(object):
         params = {"method": "CancelOrder",
                   "order_id": order_id}
         return CancelOrderResult(**self._post(params))
+
+
+    def orderInfo(self, order_id: int) -> OrderItem:
+        """Gets Order info"""
+
+        params = {
+            "method": "OrderInfo",
+            "order_id": order_id,
+        }
+
+        response = self._post(params)
+        order_info = response[str(order_id)]
+        return OrderItem(order_id, **order_info)
