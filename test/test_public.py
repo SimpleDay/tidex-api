@@ -1,4 +1,5 @@
 import unittest
+from time import sleep
 
 import tidexapi
 
@@ -27,9 +28,13 @@ class TestPublic(unittest.TestCase):
         info = tidexapi.APIInfo(connection)
         for pair in info.pair_names:
             tidexapi.getDepth(pair, connection, info)
+            sleep(0.21)
             tidexapi.getDepth(pair, connection)
+            sleep(0.21)
             tidexapi.getDepth(pair, info=info)
+            sleep(0.21)
             tidexapi.getDepth(pair)
+            sleep(0.21)
 
 
 if __name__ == '__main__':

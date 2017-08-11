@@ -1,7 +1,7 @@
 tidex-api
 ========
 
-[![Build Status](https://travis-ci.org/CodeReclaimers/btce-api.svg)](https://travis-ci.org/CodeReclaimers/btce-api)
+[![Build Status](https://travis-ci.org/lromanov/tidex-api.svg)](https://travis-ci.org/lromanov/tidex-api)
 [![Coverage Status](https://coveralls.io/repos/github/CodeReclaimers/btce-api/badge.svg)](https://coveralls.io/github/CodeReclaimers/btce-api)
 
 This library is build on top of CodeReclaimers' forsaken BTC-e API library in order to support [Tidex API](https://tidex.com/public-api) which is almost the same.
