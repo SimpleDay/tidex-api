@@ -37,4 +37,7 @@ nosetests.xml
 # VS Code
 .vscode
 
+# mypy
+.mypy_cache
+
 *~

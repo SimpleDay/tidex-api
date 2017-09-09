@@ -64,7 +64,7 @@ OrderItem = namedtuple("OrderItem",
 
 
 TradeResult = namedtuple("TradeResult",
-    ["received", "remains", "order_id", "funds"])
+    ["received", "remains", "order_id", "funds", "init_order_id", "trades"])
 
 
 CancelOrderResult = namedtuple("CancelOrderResult",
