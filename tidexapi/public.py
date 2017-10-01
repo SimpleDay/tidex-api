@@ -135,8 +135,7 @@ def getTicker(pair, connection=None, info=None):
     if type(response) is not dict:
         raise TypeError("The response is a %r, not a dict." % type(response))
     elif u'error' in response:
-        print("There is a error \"%s\" while obtaining ticker %s" % (response['error'], pair))
-        ticker = None
+        raise common.APIResponseError("There is an error \"%s\" while obtaining ticker %s" % (response['error'], pair))
     else:
         ticker = Ticker(**response[pair])
 
@@ -156,6 +155,9 @@ def getDepth(pair, connection=None, info=None):
     response = connection.makeJSONRequest("/api/3/depth/%s" % pair)
     if type(response) is not dict:
         raise TypeError("The response is not a dict.")
+
+    if u"error" in response:
+        raise common.APIResponseError("There is an error while obtaining depth for '%s' pair: '%s'" % (pair, response['error']))
 
     depth = response.get(pair)
     if type(depth) is not dict:
