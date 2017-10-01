@@ -142,7 +142,7 @@ def getTicker(pair, connection=None, info=None):
     return ticker
 
 
-def getDepth(pair, connection=None, info=None):
+def getDepth(pair, connection=None, info=None, limit=None):
     """Retrieve the depth for the given pair.  Returns a tuple (asks, bids);
     each of these is a list of (price, volume) tuples."""
 
@@ -152,7 +152,8 @@ def getDepth(pair, connection=None, info=None):
     if connection is None:
         connection = common.Connection()
 
-    response = connection.makeJSONRequest("/api/3/depth/%s" % pair)
+    url = "/api/3/depth/%s%s" % (pair, "?limit=%d" % limit if limit else "")
+    response = connection.makeJSONRequest(url)
     if type(response) is not dict:
         raise TypeError("The response is not a dict.")
 
